@@ -1,4 +1,5 @@
 package edu.gatech.oad.antlab.person;
+import java.util.Random;
 
 /**
  *  A simple class for person 2
@@ -31,7 +32,12 @@ public class Person2 {
 	 */
 	private String calc(String input) {
 	  //Person 2 put your implementation here
-	  return null;
+		Random random = new Random();
+		String jumble = scramble(random,input);
+
+
+
+	  return jumble;
 	}
 	/**
 	 * Return a string rep of this object
@@ -44,4 +50,22 @@ public class Person2 {
 	public String toString(String input) {
 	  return name + calc(input);
 	}
+
+
+	public static String scramble( Random random, String inputString )
+	{
+		// Convert your string into a simple char array:
+		char a[] = inputString.toCharArray();
+
+		// Scramble the letters using the standard Fisher-Yates shuffle,
+		for( int i=0 ; i<a.length-1 ; i++ )
+		{
+			int j = random.nextInt(a.length-1);
+			// Swap letters
+			char temp = a[i]; a[i] = a[j];  a[j] = temp;
+		}
+
+		return new String( a );
+	}
+
 }

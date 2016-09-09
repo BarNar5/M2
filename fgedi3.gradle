@@ -4,11 +4,11 @@ defaultTasks 'jar'
 apply plugin: 'java'
 
 dependencies {
-    _____________
+    compile files('lib/resources.jar')
 }
 
 jar {
     manifest {
-        attributes 'Implementation Title': 'Gradle QuickStart', 'Main-Class': 'Person2'
+        attributes 'Implementation Title': 'Milestone2 Gradle', 'ClassPath': '../../lib/resources.jar'
     }
 }

@@ -1,0 +1,14 @@
+defaultTasks 'jar'
+
+//Import a bunch of java related tasks like compileJava, compileJavaTest, clean, javadoc, jar
+apply plugin: 'java'
+
+dependencies {
+    _____________
+}
+
+jar {
+    manifest {
+        attributes 'Implementation Title': 'Gradle QuickStart', 'Main-Class': 'Person2'
+    }
+}

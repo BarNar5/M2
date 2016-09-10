@@ -39,9 +39,16 @@ public class Person2 {
 	private String calc(String input) {
 		//Person 2 put your implementation here
 		Random random = new Random();
-		String jumble = scramble(random, input);
-
-		return jumble;
+		char a[] = input.toCharArray();
+		// Scramble the letters using the standard Fisher-Yates shuffle,
+		for (int i = 0; i < a.length - 1; i++) {
+			int j = random.nextInt(a.length - 1);
+			// Swap letters
+			char temp = a[i];
+			a[i] = a[j];
+			a[j] = temp;
+		}
+		return new String(a);
 	}
 
 	/**
@@ -54,23 +61,6 @@ public class Person2 {
 	 */
 	public String toString(String input) {
 		return name + calc(input);
-	}
-
-
-	public static String scramble(Random random, String inputString) {
-		// Convert your string into a simple char array:
-		char a[] = inputString.toCharArray();
-
-		// Scramble the letters using the standard Fisher-Yates shuffle,
-		for (int i = 0; i < a.length - 1; i++) {
-			int j = random.nextInt(a.length - 1);
-			// Swap letters
-			char temp = a[i];
-			a[i] = a[j];
-			a[j] = temp;
-		}
-
-		return new String(a);
 	}
 
 }

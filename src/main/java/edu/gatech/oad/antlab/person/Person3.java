@@ -46,7 +46,7 @@ public class Person3 {
     String temp1=input;
     temp1=temp1.trim();
     String temp2="";
-    for (int i=temp1.length()-1; i>0; i--){
+    for (int i=temp1.length()-1; i>=0; i--){
         temp2+=temp1.charAt(i);
     }
 	  return temp2;
